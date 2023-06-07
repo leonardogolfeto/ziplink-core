@@ -1,0 +1,5 @@
+### Access url by ziplink
+GET http://localhost:8080/1
+
+### Generate ziplink
+POST http://localhost:8080/?fullUrl=http://roadmap.sh

@@ -35,8 +35,8 @@ class ZipLinkController(val zipLinkService :ZipLinkService) {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun shortenUrl(@RequestParam fullUrl: String) {
-        zipLinkService.shortenUrl(fullUrl)
+    fun shortenUrl(@RequestParam fullUrl: String) : Long?{
+        return zipLinkService.shortenUrl(fullUrl)
     }
 
 }

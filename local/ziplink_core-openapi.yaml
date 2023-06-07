@@ -1,0 +1,38 @@
+openapi: "3.0.3"
+info:
+  title: "ziplink_core API"
+  description: "ziplink_core API"
+  version: "1.0.0"
+servers:
+  - url: "https://ziplink_core"
+paths:
+  /{shortUrl}:
+    get:
+      summary: "GET {shortUrl}"
+      operationId: "getFullUrl"
+      parameters:
+        - name: "shortUrl"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "301":
+          description: "Moved Permanently"
+          content:
+            '*/*':
+              schema:
+                type: "string"
+  /:
+    post:
+      summary: "POST "
+      operationId: "shortenUrl"
+      parameters:
+        - name: "fullUrl"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "201":
+          description: "Created"

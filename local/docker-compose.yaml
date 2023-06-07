@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  postgres:
+    image: postgres:15rc2
+    restart: always
+    environment:
+      - POSTGRES_DB=ziplink
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
