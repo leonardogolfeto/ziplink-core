@@ -22,10 +22,10 @@ internal class ZipLinkIntegrationTest @Autowired constructor(
     @Test
     fun `should create a new ziplink and expect be redirected`() {
         mockMvc
-                .post("http://localhost:8888/?fullUrl=https://medium.com/backyard-programmers/kotlin-spring-boot-unit-testing-integration-testing-with-junit5-and-mockk-a2977bbe5711")
+                .post("http://localhost:8888/?fullUrl=https://roadmap.sh")
                 .andExpect { status { isCreated() } }
 
-        val ziplink = repository.findAll().get(0).shortUrl
+        val ziplink = repository.findAll()[0].shortUrl
 
         assertThat(ziplink)
                 .isEqualTo(1L)
